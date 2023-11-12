@@ -8,21 +8,31 @@ class Controller_Student extends Controller
     {
         $data = array();
         if (Input::get()) {
-            $query = Input::get();
+            $name = Input::get('search');
             $data['Students'] = Model_Student::find(
-                'first',
+                'all',
                 array(
                     'where' => array(
-                        'name' =>  $query['search'],
+                        array('name', 'like', '%' . $name . '%'),
                     )
                 )
             );
-            if ($data['Students']) {
+            if ($data['Students'] === null) {
                 throw new HttpNotFoundException();
             }
         } else {
             $data['Students'] = Model_Student::find('all');
         }
         return Response::forge(View::forge('student/index', $data, false));
+    }
+
+
+    public function action_createStudent()
+    {
+        $name = Input::post('name');
+        $Student = new Model_Student();
+        $Student->name = $name;
+        $Student->save();
+        Response::redirect('/');
     }
 }

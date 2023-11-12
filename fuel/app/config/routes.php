@@ -19,7 +19,7 @@ return array(
 	 *
 	 */
 
-	//'_root_' => 'welcome/index',
+	'_root_' => 'student/index',
 
 	/**
 	 * -------------------------------------------------------------------------
@@ -28,7 +28,7 @@ return array(
 	 *
 	 */
 
-	//'_404_' => 'welcome/404',
+	'_404_' => 'welcome/404',
 
 	/**
 	 * -------------------------------------------------------------------------
@@ -41,4 +41,5 @@ return array(
 
 	//'hello(/:name)?' => array('welcome/hello', 'name' => 'hello'),
 	'student/index' => 'student/index',
+	'student/create' => 'student/createStudent',
 );
