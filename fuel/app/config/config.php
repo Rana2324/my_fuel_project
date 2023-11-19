@@ -11,6 +11,13 @@
  * @link       https://fuelphp.com
  */
 return array(
+    'debugging' => false,
+    'caching' => false,
+    'cache_lifetime' => 120,
+    'template_dir' => APPPATH . 'views/',
+    'compile_dir' => APPPATH . 'cache/smarty/templates_c/',
+    'config_dir' => APPPATH . 'cache/smarty/configs/',
+    'cache_dir' => APPPATH . 'cache/smarty/cache/',
 	/**
 	 * -------------------------------------------------------------------------
 	 *  The base URL of the application
