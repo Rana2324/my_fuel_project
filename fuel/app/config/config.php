@@ -13,7 +13,7 @@
 return array(
     'debugging' => false,
     'caching' => false,
-    'cache_lifetime' => 120,
+    'cache_lifetime' => 120 ,
     'template_dir' => APPPATH . 'views/',
     'compile_dir' => APPPATH . 'cache/smarty/templates_c/',
     'config_dir' => APPPATH . 'cache/smarty/configs/',
