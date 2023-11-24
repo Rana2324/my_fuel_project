@@ -67,8 +67,10 @@ class Controller_Student extends Controller
         // Assign variables to Smarty template
         $smarty->assign('Students', $data['Students']);
 
+        $smarty->assign('title', "Hello");
+
         // Render the template
-        $output = $smarty->fetch('test.tpl');
+        $output = $smarty->fetch('demo.html');
 
         // Display the rendered template
         return Response::forge($output);

@@ -42,4 +42,7 @@ return array(
 	//'hello(/:name)?' => array('welcome/hello', 'name' => 'hello'),
 	'student/index' => 'student/index',
 	'student/create' => 'student/createStudent',
+    'contact/submit' => 'contact/formSubmit',
+    'contact/confirmation' => 'contact/confirmation',
+    'contact/confirm' => 'contact/createContact'
 );
