@@ -40,7 +40,7 @@ class Controller_Contact extends Controller
         $content = Input::post('content');
 
 
-        if(!$name) {
+        if(!$this->validate($name, 'name')) {
             $errors['name']['error'] = "Name cannot be empty";
             $errors['name']['value'] = "";
             $isValid = false;
@@ -130,4 +130,19 @@ class Controller_Contact extends Controller
         Response::redirect('/contact');
 
     }
+
+    private function validate($value, $field) {
+        $isValid = true;
+        switch ($field) {
+            case 'name':
+                if(!$value || strlen($value) < 2) {
+                    $isValid = false;
+                }
+                break;
+            default:
+                break;
+        }
+        return $isValid;
+    }
+
 }
